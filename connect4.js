@@ -38,7 +38,7 @@ function makeHtmlBoard() {
     headCell.setAttribute("id", x);
     top.append(headCell);
   }
-  htmlBoard.append(top);
+  board.append(top);
 
   // TODO: add comment for this code
   //creates main part of the game board
@@ -49,7 +49,7 @@ function makeHtmlBoard() {
       cell.setAttribute("id", `${y}-${x}`);
       row.append(cell);
     }
-    htmlBoard.append(row);
+    board.append(row);
   }
 }
 
@@ -108,7 +108,7 @@ function handleClick(evt) {
 
   // check for tie
   if(board.every(row => row.every(cell => cell))){
-    return endgame('Tie!');
+    return endGame('Tie!');
   }
   // TODO: check if all cells in board are filled; if so call, call endGame
   currPlayer = currPlayer === 1 ? 2 : 1;
